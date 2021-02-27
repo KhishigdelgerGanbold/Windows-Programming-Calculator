@@ -243,7 +243,7 @@ namespace WindowsFormsApp_Calculator
             this.btn_mult.Name = "btn_mult";
             this.btn_mult.Size = new System.Drawing.Size(65, 65);
             this.btn_mult.TabIndex = 10;
-            this.btn_mult.Text = "*";
+            this.btn_mult.Text = "X";
             this.btn_mult.UseVisualStyleBackColor = true;
             this.btn_mult.Click += new System.EventHandler(this.common_operators);
             // 
@@ -273,7 +273,7 @@ namespace WindowsFormsApp_Calculator
             this.btn_div.Name = "btn_div";
             this.btn_div.Size = new System.Drawing.Size(65, 65);
             this.btn_div.TabIndex = 12;
-            this.btn_div.Text = "/\r\n";
+            this.btn_div.Text = "/";
             this.btn_div.UseVisualStyleBackColor = true;
             this.btn_div.Click += new System.EventHandler(this.common_operators);
             // 
@@ -305,6 +305,7 @@ namespace WindowsFormsApp_Calculator
             this.btn_eql.TabIndex = 14;
             this.btn_eql.Text = "=";
             this.btn_eql.UseVisualStyleBackColor = true;
+            this.btn_eql.Click += new System.EventHandler(this.btn_eql_Click);
             // 
             // btn_bs
             // 
@@ -319,6 +320,7 @@ namespace WindowsFormsApp_Calculator
             this.btn_bs.TabIndex = 15;
             this.btn_bs.Text = "⌫";
             this.btn_bs.UseVisualStyleBackColor = true;
+            this.btn_bs.Click += new System.EventHandler(this.btn_bs_Click);
             // 
             // btn_c
             // 
@@ -333,6 +335,7 @@ namespace WindowsFormsApp_Calculator
             this.btn_c.TabIndex = 16;
             this.btn_c.Text = "C";
             this.btn_c.UseVisualStyleBackColor = true;
+            this.btn_c.Click += new System.EventHandler(this.btn_c_Click);
             // 
             // btn_ce
             // 
@@ -347,6 +350,7 @@ namespace WindowsFormsApp_Calculator
             this.btn_ce.TabIndex = 17;
             this.btn_ce.Text = "CE";
             this.btn_ce.UseVisualStyleBackColor = true;
+            this.btn_ce.Click += new System.EventHandler(this.btn_ce_Click);
             // 
             // btn_mc
             // 
@@ -441,12 +445,14 @@ namespace WindowsFormsApp_Calculator
             // subbox_display
             // 
             this.subbox_display.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.subbox_display.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subbox_display.Location = new System.Drawing.Point(2, 132);
             this.subbox_display.MinimumSize = new System.Drawing.Size(278, 20);
             this.subbox_display.Multiline = true;
             this.subbox_display.Name = "subbox_display";
             this.subbox_display.Size = new System.Drawing.Size(278, 38);
             this.subbox_display.TabIndex = 26;
+            this.subbox_display.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // CalculatorBase
             // 

@@ -40,15 +40,68 @@ namespace WindowsFormsApp_Calculator
         {
             Button b = (Button)sender;
 
-            if(result != 0)
+            if (result != 0)
             {
-
+                btn_eql.PerformClick();
+                insert_value = true;
+                asmd_operator = b.Text;
+                subbox_display.Text = result + " " + asmd_operator;
             }
+            else
+            {
+                asmd_operator = b.Text;
+                result = double.Parse(box_display.Text);
+                box_display.Text = "";
+                subbox_display.Text = System.Convert.ToString(result) + " " + asmd_operator;
+            }
+        }
 
-            asmd_operator = b.Text;
+        private void btn_ce_Click(object sender, EventArgs e)
+        {
+            box_display.Text = "0";
+        }
+
+        private void btn_c_Click(object sender, EventArgs e)
+        {
+            box_display.Text = "0";
+            subbox_display.Text = "";
+            result = 0;
+        }
+
+        private void btn_eql_Click(object sender, EventArgs e)
+        {
+            subbox_display.Text = "";
+            switch(asmd_operator)
+            {
+                case "-":
+                    box_display.Text = (result - double.Parse(box_display.Text)).ToString();
+                    break;
+                case "+":
+                    box_display.Text = (result + double.Parse(box_display.Text)).ToString();
+                    break;
+                case "X":
+                    box_display.Text = (result * double.Parse(box_display.Text)).ToString();
+                    break;
+                case "/":
+                    box_display.Text = (result / double.Parse(box_display.Text)).ToString();
+                    break;
+                default:
+                    break;
+            }
             result = double.Parse(box_display.Text);
-            box_display.Text = "";
-            subbox_display.Text = System.Convert.ToString(result) + " " + asmd_operator;
+            asmd_operator = "";
+        }
+
+        private void btn_bs_Click(object sender, EventArgs e)
+        {
+            if(box_display.Text.Length > 0)
+            {
+                box_display.Text = box_display.Text.Remove(box_display.Text.Length - 1, 1);
+            }
+            if(box_display.Text == "")
+            {
+                box_display.Text = "0";
+            }
         }
     }
 }
