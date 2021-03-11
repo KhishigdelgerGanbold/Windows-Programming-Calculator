@@ -1,0 +1,30 @@
+C:\Lessons\Windows programming\Calculator\Calculator\Calculator\bin\Debug\Calculator.exe.config
+C:\Lessons\Windows programming\Calculator\Calculator\Calculator\bin\Debug\Calculator.exe
+C:\Lessons\Windows programming\Calculator\Calculator\Calculator\bin\Debug\Calculator.pdb
+C:\Lessons\Windows programming\Calculator\Calculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
+C:\Lessons\Windows programming\Calculator\Calculator\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+C:\Lessons\Windows programming\Calculator\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
+C:\Lessons\Windows programming\Calculator\Calculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+C:\Lessons\Windows programming\Calculator\Calculator\Calculator\obj\Debug\Calculator.exe
+C:\Lessons\Windows programming\Calculator\Calculator\Calculator\obj\Debug\Calculator.pdb
+C:\Lessons\Windows programming\Calculator\Calculator\Calculator\obj\Debug\Calculator.Form1.resources
+C:\Users\Khishigdelger\Downloads\Windows programming\Windows programming\Calculator\Calculator\Calculator\bin\Debug\Calculator.exe.config
+C:\Users\Khishigdelger\Downloads\Windows programming\Windows programming\Calculator\Calculator\Calculator\bin\Debug\Calculator.exe
+C:\Users\Khishigdelger\Downloads\Windows programming\Windows programming\Calculator\Calculator\Calculator\bin\Debug\Calculator.pdb
+C:\Users\Khishigdelger\Downloads\Windows programming\Windows programming\Calculator\Calculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
+C:\Users\Khishigdelger\Downloads\Windows programming\Windows programming\Calculator\Calculator\Calculator\obj\Debug\Calculator.Form1.resources
+C:\Users\Khishigdelger\Downloads\Windows programming\Windows programming\Calculator\Calculator\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+C:\Users\Khishigdelger\Downloads\Windows programming\Windows programming\Calculator\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
+C:\Users\Khishigdelger\Downloads\Windows programming\Windows programming\Calculator\Calculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\Khishigdelger\Downloads\Windows programming\Windows programming\Calculator\Calculator\Calculator\obj\Debug\Calculator.exe
+C:\Users\Khishigdelger\Downloads\Windows programming\Windows programming\Calculator\Calculator\Calculator\obj\Debug\Calculator.pdb
+C:\Users\Khishigdelger\Desktop\hichel\Windows programming\Windows programming\Calculator\Calculator\Calculator\bin\Debug\Calculator.exe.config
+C:\Users\Khishigdelger\Desktop\hichel\Windows programming\Windows programming\Calculator\Calculator\Calculator\bin\Debug\Calculator.exe
+C:\Users\Khishigdelger\Desktop\hichel\Windows programming\Windows programming\Calculator\Calculator\Calculator\bin\Debug\Calculator.pdb
+C:\Users\Khishigdelger\Desktop\hichel\Windows programming\Windows programming\Calculator\Calculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
+C:\Users\Khishigdelger\Desktop\hichel\Windows programming\Windows programming\Calculator\Calculator\Calculator\obj\Debug\Calculator.Form1.resources
+C:\Users\Khishigdelger\Desktop\hichel\Windows programming\Windows programming\Calculator\Calculator\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+C:\Users\Khishigdelger\Desktop\hichel\Windows programming\Windows programming\Calculator\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
+C:\Users\Khishigdelger\Desktop\hichel\Windows programming\Windows programming\Calculator\Calculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\Khishigdelger\Desktop\hichel\Windows programming\Windows programming\Calculator\Calculator\Calculator\obj\Debug\Calculator.exe
+C:\Users\Khishigdelger\Desktop\hichel\Windows programming\Windows programming\Calculator\Calculator\Calculator\obj\Debug\Calculator.pdb
