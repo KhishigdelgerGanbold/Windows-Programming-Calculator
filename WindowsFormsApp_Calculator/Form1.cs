@@ -134,7 +134,7 @@ namespace Calculator
             {
                 case "MC":
                     calculator.ClearMemoryItem(index);
-                    //createMemory();
+                    createMemory();
                     if(calculator.Memories.Count == 0)
                     {
                         btnMClearAll.Enabled = false;
