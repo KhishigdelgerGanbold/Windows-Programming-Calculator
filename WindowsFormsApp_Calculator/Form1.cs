@@ -10,230 +10,99 @@ namespace Calculator
     {
 
         private CalculatorBase calculator;
-        private bool isOperationClicked = false;
-        private bool isOperationEqualClicked = false;
-        private bool isOperationClearClicked = false;
-        private bool isOperationClearEntryClicked = false;
-        private bool isOperationStoreClicked = false;
-        private bool isMemoryOperationClicked = false;
         private List<TableLayoutPanel> panels;
-        private List<String> subbox;
+
+        double result = 0;
+        string asmd_operator = "";
+        bool insert_value = false;
 
         public Form1()
         {
             InitializeComponent();
             calculator = new CalculatorBase();
             panels = new List<TableLayoutPanel>();
-            subbox = new List<string>();
             btnMClearAll.Enabled = false;
             btnMRecall.Enabled = false;
             btnMAdd.Enabled = false;
             btnMSub.Enabled = false;
         }
 
-        private void btnNum_Click(object sender, EventArgs e)
+        private void numbers_0to9(object sender, EventArgs e)
         {
-            if (!isOperationClicked & !isOperationClearClicked & !isOperationClearEntryClicked & !isOperationEqualClicked & !isMemoryOperationClicked)
+            Button b = (Button)sender;
+            if ((txtBxResult.Text == "0") || insert_value)
+                txtBxResult.Text = "";
+            insert_value = false;
+            txtBxResult.Text = txtBxResult.Text + b.Text;
+        }
+
+        private void ar_operations(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+
+            if (result != 0)
             {
-                if (txtBxResult.Text.Equals("0"))
-                {
-                    txtBxResult.Text = ((Button)sender).Text;
-                    calculator.Num2 = Double.Parse(txtBxResult.Text);
-                }
-                else
-                {
-                    txtBxResult.Text += ((Button)sender).Text;
-                    calculator.Num2 = Double.Parse(txtBxResult.Text);
-                }
-            }
-            else if ((isOperationEqualClicked & isOperationClearEntryClicked & !isOperationClicked & !isMemoryOperationClicked) | (isOperationClearClicked & !isOperationClicked & !isMemoryOperationClicked))
-            {
-                if (txtBxResult.Text.Equals("0"))
-                {
-                    txtBxResult.Text = ((Button)sender).Text;
-                    calculator.Num2 = Double.Parse(txtBxResult.Text);
-                }
-                else
-                {
-                    txtBxResult.Text += ((Button)sender).Text;
-                    calculator.Num2 = Double.Parse(txtBxResult.Text);
-                }
-                calculator.Num1 = null;
-                Console.WriteLine("---------- " + calculator.Num1 + " num2 " + calculator.Num2);
+                btn_eql.PerformClick();
+                insert_value = true;
+                asmd_operator = b.Text;
+                subbox_display.Text = result + " " + asmd_operator;
             }
             else
             {
-                txtBxResult.Text = ((Button)sender).Text;
-                calculator.Num2 = Double.Parse(txtBxResult.Text);
+                asmd_operator = b.Text;
+                result = double.Parse(txtBxResult.Text);
+                txtBxResult.Text = "";
+                subbox_display.Text = System.Convert.ToString(result) + " " + asmd_operator;
             }
-            isOperationClicked = false;
-            isOperationClearClicked = false;
-            isOperationClearEntryClicked = false;
-            isOperationEqualClicked = false;
-            isOperationStoreClicked = false;
-            isMemoryOperationClicked = false;
         }
 
-        private void btnOperation_Click(object sender, EventArgs e)
+        private void btn_eql_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(calculator.Num1 + " num2 " + calculator.Num2);
-            if (isOperationEqualClicked)
+            subbox_display.Text = "";
+            switch (asmd_operator)
             {
-                isOperationEqualClicked = false;
-                calculator.Num2 = calculator.Num1;
-            }
-            else if (!isOperationClicked | isOperationStoreClicked)
-            {
-                if (calculator.Num1 != null & calculator.Num2 != null)
-                {
-                    subbox.Add(calculator.Num2.ToString());
-                    txtBxDetails.Text = "";
-                    subbox.ForEach(x => txtBxDetails.Text += x);
-                    
-                    switch (calculator.Operation)
-                    {
-                        case "btnAdd":
-                            calculator.AddNums();
-                            break;
-                        case "btnSub":
-                            calculator.SubNums();
-                            break;
-                        case "btnMult":
-                            calculator.MultNums();
-                            break;
-                        case "btnDiv":
-                            calculator.DivNums();
-                            break;
-                        default:
-                            break;
-                    }
-                    
-                    txtBxResult.Text = calculator.Num1.ToString();
-                    calculator.Num2 = null;
-                    
-                }
-                else if (calculator.Num1 != null & calculator.Num2 == null) { }
-                else
-                {
-                    calculator.Num1 = calculator.Num2;
-                    calculator.Num2 = null;
-                    subbox.Add(calculator.Num1.ToString());
-                    txtBxDetails.Text = "";
-                    subbox.ForEach(x => txtBxDetails.Text += x);
-                }
-            }
-            
-
-            calculator.Operation = ((Button)sender).Name;
-            switch (calculator.Operation)
-            {
-                case "btnAdd":
-                    subbox.Add("+");
+                case "-":
+                    txtBxResult.Text = (result - double.Parse(txtBxResult.Text)).ToString();
                     break;
-                case "btnSub":
-                    subbox.Add("-");
+                case "+":
+                    txtBxResult.Text = (result + double.Parse(txtBxResult.Text)).ToString();
                     break;
-                case "btnMult":
-                    subbox.Add("×");
+                case "×":
+                    txtBxResult.Text = (result * double.Parse(txtBxResult.Text)).ToString();
                     break;
-                case "btnDiv":
-                    subbox.Add("÷");
+                case "÷":
+                    txtBxResult.Text = (result / double.Parse(txtBxResult.Text)).ToString();
                     break;
                 default:
                     break;
             }
-
-            txtBxDetails.Text = "";
-            subbox.ForEach(x => txtBxDetails.Text += x);
-            isOperationClicked = true;
-            Console.WriteLine(calculator.Num1 + " num2 " + calculator.Num2);
-            isOperationStoreClicked = false;
+            result = double.Parse(txtBxResult.Text);
+            asmd_operator = "";
         }
 
-        private void btnOperationEqual_Click(object sender, EventArgs e)
-        {
-            
-            if (calculator.Num1 == null)
-                calculator.Num1 = 0;
-            if (isOperationClicked & !isOperationStoreClicked)
-            {
-                isOperationClicked = false;
-                calculator.Num2 = calculator.Num1;
-            }
-            subbox.Clear();
-            subbox.Add(calculator.Num1.ToString());
-            switch (calculator.Operation)
-            {
-                case "btnAdd":
-                    subbox.Add("+");
-                    break;
-                case "btnSub":
-                    subbox.Add("-");
-                    break;
-                case "btnMult":
-                    subbox.Add("×");
-                    break;
-                case "btnDiv":
-                    subbox.Add("÷");
-                    break;
-                default:
-                    break;
-            }
-            subbox.Add(calculator.Num2.ToString());
-            txtBxDetails.Text = "";
-            subbox.ForEach(x => txtBxDetails.Text += x);
-            switch (calculator.Operation)
-            {
-                case "btnAdd":
-                    calculator.AddNums();
-                    break;
-                case "btnSub":
-                    calculator.SubNums();
-                    break;
-                case "btnMult":
-                    calculator.MultNums();
-                    break;
-                case "btnDiv":
-                    calculator.DivNums();
-                    break;
-                default:
-                    break;
-            }
-
-            txtBxResult.Text = calculator.Num1.ToString();
-            isOperationEqualClicked = true;
-            
-        }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            switch (((Button)sender).Name)
+            txtBxResult.Text = "0";
+            subbox_display.Text = "";
+            result = 0;
+        }
+
+        private void btnClearEntry_Click(object sender, EventArgs e)
+        {
+            txtBxResult.Text = "0";
+        }
+
+        private void btnBackspace_Click(object sender, EventArgs e)
+        {
+            if (txtBxResult.Text.Length > 0)
             {
-                case "btnClearEntry":
-                    if (isOperationEqualClicked)
-                    {
-                        calculator.ClearAll();
-                        txtBxDetails.Text = "";
-                        subbox.Clear();
-                        isOperationClearClicked = true;
-                        isOperationEqualClicked = false;
-                    }
-                    else
-                    {
-                        calculator.ClearEntry();
-                        isOperationClearEntryClicked = true;
-                    }
-                    break;
-                case "btnClear":
-                    calculator.ClearAll();
-                    txtBxDetails.Text = "";
-                    subbox.Clear();
-                    isOperationClearClicked = true;
-                    break;
-                default:
-                    break;
+                txtBxResult.Text = txtBxResult.Text.Remove(txtBxResult.Text.Length - 1, 1);
             }
-            txtBxResult.Text = calculator.Num2.ToString();
+            if (txtBxResult.Text == "")
+            {
+                txtBxResult.Text = "0";
+            }
         }
 
         private void btnMStore_Click(object sender, EventArgs e)
@@ -242,10 +111,18 @@ namespace Calculator
             btnMRecall.Enabled = true;
             btnMAdd.Enabled = true;
             btnMSub.Enabled = true;
-            isOperationClicked = true;
-            isOperationStoreClicked = true;
             calculator.Store(Double.Parse(txtBxResult.Text));
             createMemory();
+        }
+
+        private void btnMClearAll_Click(object sender, EventArgs e)
+        {
+            btnMClearAll.Enabled = false;
+            btnMRecall.Enabled = false;
+            btnMAdd.Enabled = false;
+            btnMSub.Enabled = false;
+            calculator.ClearAllMemory();
+            flowLPMemories.Controls.Clear();
         }
 
         private void button_Mouseclick(object sender, MouseEventArgs e)
@@ -257,7 +134,14 @@ namespace Calculator
             {
                 case "MC":
                     calculator.ClearMemoryItem(index);
-                    createMemory();
+                    //createMemory();
+                    if(calculator.Memories.Count == 0)
+                    {
+                        btnMClearAll.Enabled = false;
+                        btnMRecall.Enabled = false;
+                        btnMAdd.Enabled = false;
+                        btnMSub.Enabled = false;
+                    }
                     break;
                 case "M+":
                     calculator.AddToMemoryItem(index, Double.Parse(txtBxResult.Text));
@@ -282,29 +166,9 @@ namespace Calculator
                 default:
                     break;
                         
-            }
-            
+            }     
 
         }
-
-        private void panel_MouseClick(object sender, MouseEventArgs e)
-        {
-            foreach (Control child in ((TableLayoutPanel)sender).Controls)
-            {
-                if (child is Label)
-                {
-                    txtBxResult.Text = child.Text;
-                    calculator.Num2 = Double.Parse(txtBxResult.Text);
-                    Console.WriteLine("****" + calculator.Num1 + " num2 " + calculator.Num2);
-                    isOperationClicked = false;
-                    isOperationClearClicked = false;
-                    isOperationClearEntryClicked = false;
-                    isOperationEqualClicked = false;
-                    isOperationStoreClicked = false;
-                }
-            }
-        }
-
   
         private void createMemory()
         {
@@ -313,6 +177,7 @@ namespace Calculator
                 flowLPMemories.Controls.Remove(panel);
             };
             panels = new List<TableLayoutPanel>();
+            
             foreach (Memory memory in calculator.Memories)
             {
 
@@ -349,7 +214,6 @@ namespace Calculator
                 addBtn.MouseClick += button_Mouseclick;
                 subBtn.MouseClick += button_Mouseclick;
                 clearBtn.MouseClick += button_Mouseclick;
-                panel.MouseClick += panel_MouseClick;
 
                 panel.Controls.Add(lblMemory, 0, 0);
                 panel.Controls.Add(clearBtn, 0, 1);
@@ -389,17 +253,23 @@ namespace Calculator
                 default:
                     break;
             }
-            isMemoryOperationClicked = true;
     }
 
-        private void btnMClearAll_Click(object sender, EventArgs e)
+        private void btn_frac_Click(object sender, EventArgs e)
         {
-            btnMClearAll.Enabled = false;
-            btnMRecall.Enabled = false;
-            btnMAdd.Enabled = false;
-            btnMSub.Enabled = false;
-            calculator.ClearAllMemory();
-            flowLPMemories.Controls.Clear();
+            if (txtBxResult.Text.IndexOf('.') == -1)
+            {
+                txtBxResult.Text = txtBxResult.Text + '.';
+            }
+            else
+            {
+                var charToRemove = new string[] { "." };
+                foreach (var dot in charToRemove)
+                {
+                    txtBxResult.Text = txtBxResult.Text.Replace(dot, string.Empty);
+                }
+                txtBxResult.Text = txtBxResult.Text + '.';
+            }
         }
     }
 }

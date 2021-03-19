@@ -35,8 +35,8 @@
             this.flowLPMemories = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanelLeft = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelBot = new System.Windows.Forms.TableLayoutPanel();
-            this.btnEqual = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
+            this.btn_eql = new System.Windows.Forms.Button();
+            this.btn_frac = new System.Windows.Forms.Button();
             this.btnNum0 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -66,7 +66,7 @@
             this.btnMSub = new System.Windows.Forms.Button();
             this.btnMStore = new System.Windows.Forms.Button();
             this.txtBxResult = new System.Windows.Forms.TextBox();
-            this.txtBxDetails = new System.Windows.Forms.TextBox();
+            this.subbox_display = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panelRoot.SuspendLayout();
             this.tabControlRight.SuspendLayout();
@@ -141,7 +141,7 @@
             this.tableLayoutPanelLeft.Controls.Add(this.tableLayoutPanelBot, 0, 4);
             this.tableLayoutPanelLeft.Controls.Add(this.tableLayoutPanelMid, 0, 3);
             this.tableLayoutPanelLeft.Controls.Add(this.txtBxResult, 0, 2);
-            this.tableLayoutPanelLeft.Controls.Add(this.txtBxDetails, 0, 1);
+            this.tableLayoutPanelLeft.Controls.Add(this.subbox_display, 0, 1);
             this.tableLayoutPanelLeft.Controls.Add(this.textBox1, 0, 0);
             this.tableLayoutPanelLeft.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanelLeft.Name = "tableLayoutPanelLeft";
@@ -162,8 +162,8 @@
             this.tableLayoutPanelBot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelBot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelBot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelBot.Controls.Add(this.btnEqual, 3, 5);
-            this.tableLayoutPanelBot.Controls.Add(this.button28, 2, 5);
+            this.tableLayoutPanelBot.Controls.Add(this.btn_eql, 3, 5);
+            this.tableLayoutPanelBot.Controls.Add(this.btn_frac, 2, 5);
             this.tableLayoutPanelBot.Controls.Add(this.btnNum0, 1, 5);
             this.tableLayoutPanelBot.Controls.Add(this.button26, 0, 5);
             this.tableLayoutPanelBot.Controls.Add(this.btnAdd, 3, 4);
@@ -199,36 +199,36 @@
             this.tableLayoutPanelBot.Size = new System.Drawing.Size(334, 319);
             this.tableLayoutPanelBot.TabIndex = 0;
             // 
-            // btnEqual
+            // btn_eql
             // 
-            this.btnEqual.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnEqual.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEqual.FlatAppearance.BorderSize = 0;
-            this.btnEqual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEqual.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEqual.Location = new System.Drawing.Point(252, 268);
-            this.btnEqual.Name = "btnEqual";
-            this.btnEqual.Size = new System.Drawing.Size(79, 48);
-            this.btnEqual.TabIndex = 23;
-            this.btnEqual.Text = "=";
-            this.btnEqual.UseVisualStyleBackColor = false;
-            this.btnEqual.Click += new System.EventHandler(this.btnOperationEqual_Click);
+            this.btn_eql.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_eql.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_eql.FlatAppearance.BorderSize = 0;
+            this.btn_eql.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_eql.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_eql.Location = new System.Drawing.Point(252, 268);
+            this.btn_eql.Name = "btn_eql";
+            this.btn_eql.Size = new System.Drawing.Size(79, 48);
+            this.btn_eql.TabIndex = 23;
+            this.btn_eql.Text = "=";
+            this.btn_eql.UseVisualStyleBackColor = false;
+            this.btn_eql.Click += new System.EventHandler(this.btn_eql_Click);
             // 
-            // button28
+            // btn_frac
             // 
-            this.button28.BackColor = System.Drawing.Color.White;
-            this.button28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button28.Enabled = false;
-            this.button28.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button28.FlatAppearance.BorderSize = 0;
-            this.button28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button28.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button28.Location = new System.Drawing.Point(169, 268);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(77, 48);
-            this.button28.TabIndex = 22;
-            this.button28.Text = ".";
-            this.button28.UseVisualStyleBackColor = false;
+            this.btn_frac.BackColor = System.Drawing.Color.White;
+            this.btn_frac.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_frac.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_frac.FlatAppearance.BorderSize = 0;
+            this.btn_frac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_frac.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_frac.Location = new System.Drawing.Point(169, 268);
+            this.btn_frac.Name = "btn_frac";
+            this.btn_frac.Size = new System.Drawing.Size(77, 48);
+            this.btn_frac.TabIndex = 22;
+            this.btn_frac.Text = ".";
+            this.btn_frac.UseVisualStyleBackColor = false;
+            this.btn_frac.Click += new System.EventHandler(this.btn_frac_Click);
             // 
             // btnNum0
             // 
@@ -244,7 +244,7 @@
             this.btnNum0.TabIndex = 21;
             this.btnNum0.Text = "0";
             this.btnNum0.UseVisualStyleBackColor = false;
-            this.btnNum0.Click += new System.EventHandler(this.btnNum_Click);
+            this.btnNum0.Click += new System.EventHandler(this.numbers_0to9);
             // 
             // button26
             // 
@@ -275,7 +275,7 @@
             this.btnAdd.TabIndex = 19;
             this.btnAdd.Text = "+";
             this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnOperation_Click);
+            this.btnAdd.Click += new System.EventHandler(this.ar_operations);
             // 
             // btnNum3
             // 
@@ -291,7 +291,7 @@
             this.btnNum3.TabIndex = 18;
             this.btnNum3.Text = "3";
             this.btnNum3.UseVisualStyleBackColor = false;
-            this.btnNum3.Click += new System.EventHandler(this.btnNum_Click);
+            this.btnNum3.Click += new System.EventHandler(this.numbers_0to9);
             // 
             // btnNum2
             // 
@@ -307,7 +307,7 @@
             this.btnNum2.TabIndex = 17;
             this.btnNum2.Text = "2";
             this.btnNum2.UseVisualStyleBackColor = false;
-            this.btnNum2.Click += new System.EventHandler(this.btnNum_Click);
+            this.btnNum2.Click += new System.EventHandler(this.numbers_0to9);
             // 
             // btnNum1
             // 
@@ -323,7 +323,7 @@
             this.btnNum1.TabIndex = 16;
             this.btnNum1.Text = "1";
             this.btnNum1.UseVisualStyleBackColor = false;
-            this.btnNum1.Click += new System.EventHandler(this.btnNum_Click);
+            this.btnNum1.Click += new System.EventHandler(this.numbers_0to9);
             // 
             // btnSub
             // 
@@ -338,7 +338,7 @@
             this.btnSub.TabIndex = 15;
             this.btnSub.Text = "-";
             this.btnSub.UseVisualStyleBackColor = false;
-            this.btnSub.Click += new System.EventHandler(this.btnOperation_Click);
+            this.btnSub.Click += new System.EventHandler(this.ar_operations);
             // 
             // btnNum6
             // 
@@ -354,7 +354,7 @@
             this.btnNum6.TabIndex = 14;
             this.btnNum6.Text = "6";
             this.btnNum6.UseVisualStyleBackColor = false;
-            this.btnNum6.Click += new System.EventHandler(this.btnNum_Click);
+            this.btnNum6.Click += new System.EventHandler(this.numbers_0to9);
             // 
             // btnNum5
             // 
@@ -370,7 +370,7 @@
             this.btnNum5.TabIndex = 13;
             this.btnNum5.Text = "5";
             this.btnNum5.UseVisualStyleBackColor = false;
-            this.btnNum5.Click += new System.EventHandler(this.btnNum_Click);
+            this.btnNum5.Click += new System.EventHandler(this.numbers_0to9);
             // 
             // btnNum4
             // 
@@ -386,7 +386,7 @@
             this.btnNum4.TabIndex = 12;
             this.btnNum4.Text = "4";
             this.btnNum4.UseVisualStyleBackColor = false;
-            this.btnNum4.Click += new System.EventHandler(this.btnNum_Click);
+            this.btnNum4.Click += new System.EventHandler(this.numbers_0to9);
             // 
             // btnMult
             // 
@@ -401,7 +401,7 @@
             this.btnMult.TabIndex = 11;
             this.btnMult.Text = "×";
             this.btnMult.UseVisualStyleBackColor = false;
-            this.btnMult.Click += new System.EventHandler(this.btnOperation_Click);
+            this.btnMult.Click += new System.EventHandler(this.ar_operations);
             // 
             // btnNum9
             // 
@@ -417,7 +417,7 @@
             this.btnNum9.TabIndex = 10;
             this.btnNum9.Text = "9";
             this.btnNum9.UseVisualStyleBackColor = false;
-            this.btnNum9.Click += new System.EventHandler(this.btnNum_Click);
+            this.btnNum9.Click += new System.EventHandler(this.numbers_0to9);
             // 
             // btnNum8
             // 
@@ -433,7 +433,7 @@
             this.btnNum8.TabIndex = 9;
             this.btnNum8.Text = "8";
             this.btnNum8.UseVisualStyleBackColor = false;
-            this.btnNum8.Click += new System.EventHandler(this.btnNum_Click);
+            this.btnNum8.Click += new System.EventHandler(this.numbers_0to9);
             // 
             // btnNum7
             // 
@@ -449,7 +449,7 @@
             this.btnNum7.TabIndex = 8;
             this.btnNum7.Text = "7";
             this.btnNum7.UseVisualStyleBackColor = false;
-            this.btnNum7.Click += new System.EventHandler(this.btnNum_Click);
+            this.btnNum7.Click += new System.EventHandler(this.numbers_0to9);
             // 
             // btnDiv
             // 
@@ -464,13 +464,12 @@
             this.btnDiv.TabIndex = 7;
             this.btnDiv.Text = "÷";
             this.btnDiv.UseVisualStyleBackColor = false;
-            this.btnDiv.Click += new System.EventHandler(this.btnOperation_Click);
+            this.btnDiv.Click += new System.EventHandler(this.ar_operations);
             // 
             // btnBackspace
             // 
             this.btnBackspace.BackColor = System.Drawing.Color.Gainsboro;
             this.btnBackspace.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBackspace.Enabled = false;
             this.btnBackspace.FlatAppearance.BorderSize = 0;
             this.btnBackspace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackspace.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -480,6 +479,7 @@
             this.btnBackspace.TabIndex = 6;
             this.btnBackspace.Text = "⌫";
             this.btnBackspace.UseVisualStyleBackColor = false;
+            this.btnBackspace.Click += new System.EventHandler(this.btnBackspace_Click);
             // 
             // btnClear
             // 
@@ -509,7 +509,7 @@
             this.btnClearEntry.TabIndex = 4;
             this.btnClearEntry.Text = "CE";
             this.btnClearEntry.UseVisualStyleBackColor = false;
-            this.btnClearEntry.Click += new System.EventHandler(this.btnClear_Click);
+            this.btnClearEntry.Click += new System.EventHandler(this.btnClearEntry_Click);
             // 
             // button6
             // 
@@ -675,18 +675,18 @@
             this.txtBxResult.Text = "0";
             this.txtBxResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // txtBxDetails
+            // subbox_display
             // 
-            this.txtBxDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.subbox_display.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBxDetails.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBxDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBxDetails.Location = new System.Drawing.Point(3, 31);
-            this.txtBxDetails.Multiline = true;
-            this.txtBxDetails.Name = "txtBxDetails";
-            this.txtBxDetails.Size = new System.Drawing.Size(334, 31);
-            this.txtBxDetails.TabIndex = 3;
-            this.txtBxDetails.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.subbox_display.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.subbox_display.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subbox_display.Location = new System.Drawing.Point(3, 31);
+            this.subbox_display.Multiline = true;
+            this.subbox_display.Name = "subbox_display";
+            this.subbox_display.Size = new System.Drawing.Size(334, 31);
+            this.subbox_display.TabIndex = 3;
+            this.subbox_display.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox1
             // 
@@ -733,8 +733,8 @@
         private System.Windows.Forms.FlowLayoutPanel flowLPMemories;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelLeft;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelBot;
-        private System.Windows.Forms.Button btnEqual;
-        private System.Windows.Forms.Button button28;
+        private System.Windows.Forms.Button btn_eql;
+        private System.Windows.Forms.Button btn_frac;
         private System.Windows.Forms.Button btnNum0;
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Button btnAdd;
@@ -764,7 +764,7 @@
         private System.Windows.Forms.Button btnMSub;
         private System.Windows.Forms.Button btnMStore;
         private System.Windows.Forms.TextBox txtBxResult;
-        private System.Windows.Forms.TextBox txtBxDetails;
+        private System.Windows.Forms.TextBox subbox_display;
         private System.Windows.Forms.TextBox textBox1;
     }
 }
